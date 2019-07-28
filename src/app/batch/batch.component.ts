@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-batch',
@@ -10,6 +10,10 @@ export class BatchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  submit() {
+    console.log('Submit............');
   }
 
 }
