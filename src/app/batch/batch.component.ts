@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {BatchService} from "../services/batch-service";
+import {IBatch} from "../shared/model/batch.model";
 
 @Component({
   selector: 'app-batch',
@@ -7,13 +9,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BatchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private batchService: BatchService) { }
 
   ngOnInit() {
   }
 
   submit() {
-    console.log('Submit............');
+      console.log('Submit............');
+      this.batchService.createBatch({id: 1, name: 'Twelve'}).subscribe((batch: IBatch) => {
+          console.log('Got batch...');
+      });
   }
 
 }
